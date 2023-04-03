@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Refresh/Reload a Page using jQuery/JS</title>
+</head>
+<body>
+
+  <button id="refresh-btn">Refresh Page</button>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // bind click event to refresh button
+      $('#refresh-btn').click(function() {
+        // reload the current page
+        location.reload();
+      });
+    });
+  </script>
+
+</body>
+</html>

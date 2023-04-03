@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Allow or Block Example</title>
+    <script>
+      function openPopup() {
+        // Set the width and height of the popup window
+        var width = 400;
+        var height = 300;
+        
+        // Calculate the position of the popup window
+        var left = (screen.width / 2) - (width / 2);
+        var top = (screen.height / 2) - (height / 2);
+        
+        // Open the popup window
+        var popup = window.open('popup.html', 'Popup', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+        
+        // Ask the user to allow or block the feature
+        if (popup) {
+          var timer = setInterval(function() {
+            if (popup.closed) {
+              clearInterval(timer);
+              var allowed = confirm('Do you want to allow the feature?');
+              if (allowed) {
+                // User clicked "Allow"
+              } else {
+                // User clicked "Block"
+              }
+            }
+          }, 1000);
+        } else {
+          alert('Popup blocked!');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="openPopup()">Open Popup</button>
+  </body>
+</html>

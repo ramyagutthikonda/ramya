@@ -1,0 +1,29 @@
+ <div>
+      <h1>Hotel Booking Form</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Check-in Date:
+          <input type="date" value={checkinDate} onChange={handleCheckinChange} onBlur={isSubmitDisabled} required />
+        </label>
+        <br />
+        <label>
+          Check-out Date:
+          <input type="date" value={checkoutDate} onChange={handleCheckoutChange} onBlur={isSubmitDisabled} required />
+        </label>
+        <br />
+        <label>
+          Guests:
+          <input type="number" value={guests} onChange={handleGuestsChange} min="1" max="10" />
+        </label>
+        <br />
+        <label>
+          Rooms:
+          <input type="number" value={rooms} onChange={handleRoomsChange} min="1" max="5" />
+        </label>
+        <br />
+        <button type="submit" disabled={submitDisabled}>
+          Book Now
+        </button>
+      </form>
+    </div>
+
